@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<limits.h>
+#include<stdlib.h>
+struct Stack{
+    int top;
+    unsigned size;
+    int*arr;
+};
+struct Stack*create(unsigned size)
+{
+    struct Stack*stack=(struct Stack*)malloc(sizeof(struct Stack));
+    stack->size=size;
+    stack->top=-1;
+    stack->arr=(int*)malloc(stack->size*sizeof(int));
+    return stack;
+}
+int isFull(struct Stack*stack)
+{
+    return stack->top==stack->size-1;
+}
